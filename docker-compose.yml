@@ -1,0 +1,34 @@
+version: "3"
+services:
+  ex:
+    image: ex
+    build:
+      context: ./
+      dockerfile: ./ex/Dockerfile
+    ports:
+      - "3004:3004"
+
+  ph:
+    image: ph
+    build:
+      context: ./
+      dockerfile: ./ph/Dockerfile
+    ports:
+      - "80:80"
+  
+
+  py:
+    image: py
+    build:
+      context: ./
+      dockerfile: ./py./.venv/Dockerfile
+    ports:
+      - "5000:5000"
+  
+  randoms:
+    image: randoms
+    build:
+      context: ./
+      dockerfile: ./randoms/Dockerfile
+    ports:
+      - "3000:3000"
