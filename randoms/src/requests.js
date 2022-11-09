@@ -1,8 +1,8 @@
 // El objetivo es reemplazar esto por microservicios que oculten la fuente de datos.
 
-const EX_HOST_PORT = process.env.EX_HOST +":"+ process.env.EX_PORT;
-const PH_HOST_PORT = process.env.PH_HOST +":"+ process.env.PH_PORT;
-const PY_HOST_PORT = process.env.PY_HOST +":"+ process.env.PY_PORT;
+const EX_HOST_PORT = process.env.REACT_APP_EX_HOST +":"+ process.env.REACT_APP_EX_PORT;
+const PH_HOST_PORT = process.env.REACT_APP_PH_HOST +":"+ process.env.REACT_APP_PH_PORT;
+const PY_HOST_PORT = process.env.REACT_APP_PY_HOST +":"+ process.env.REACT_APP_PY_PORT;
 
 console.log("SE VIENE UN HOST CON PUERTO");
 console.log(EX_HOST_PORT);

@@ -1,1 +1,3 @@
-- ver randoms/src/requests.js: no andan las variables del enviroment.
+- en docker-compose.yml: cómo deberían llamarse los hosts? como debería ser lo de las rutas en el context?
+
+- cómo hacemos eso de replicar microservicios?
