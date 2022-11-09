@@ -1,0 +1,56 @@
+version: '3'
+services:
+
+  ex:
+    image: ex
+    build: 
+      context: ./ex
+      dockerfile: Dockerfile
+    container_name: ex
+    ports:
+      - "3004:3004"
+    environment:
+      - PORT=3004
+    restart: "no"
+    
+  ph:
+    image: ph
+    build: 
+      context: ./ph
+      dockerfile: Dockerfile
+    container_name: ph
+    ports:
+      - "80:80"
+    environment:
+      - PORT=80
+    restart: "no"
+  
+  py:
+    image: py
+    build: 
+      context: ./
+      dockerfile: ./py./.venv/Dockerfile
+    container_name: py
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+    restart: "no"
+
+  randoms:
+    image: randoms
+    build: 
+      context: ./randoms
+      dockerfile: Dockerfile
+    container_name: randoms
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - EX_HOST=http://localhost
+      - EX_PORT=3004
+      - PH_HOST=http://localhost
+      - PH_PORT=80
+      - PY_HOST=http://localhost
+      - PY_PORT=5000
+    restart: "no"

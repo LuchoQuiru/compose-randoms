@@ -1,0 +1,1 @@
+- ver randoms/src/requests.js: no andan las variables del enviroment.

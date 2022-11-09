@@ -1,10 +1,9 @@
 FROM node:12.18.1-alpine
-WORKDIR /
 
-COPY /randoms/package*.json ./
-COPY /randoms/public ./public
-COPY /randoms/src ./src
-
-RUN npm install --only-production
+WORKDIR /usr/src/app
+COPY ./package*.json ./
+COPY ./public ./public
+RUN npm install --only=production
+COPY ./src ./src
 
 CMD npm start
