@@ -2,6 +2,7 @@ from flask import Flask
 from random import seed
 from random import randint
 
+
 app = Flask(__name__)
 seed(1)
 

@@ -1,6 +1,9 @@
 const Express = require("express");
-var app = Express();
+const cors = require('cors')
 
+var app = Express();    
+
+app.use(cors())
 
 app.get("/", (req,res)=>{
     valor = Math.random() * (99999 - 10000) + 10000;
@@ -9,5 +12,5 @@ app.get("/", (req,res)=>{
 
 
 
-app.listen(3000, ()=> { 
-    console.log("Up 3000")});
+app.listen(3004, ()=> { 
+    console.log("Up 3004")});
