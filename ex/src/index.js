@@ -1,7 +1,8 @@
 const Express = require("express");
 const cors = require('cors')
 
-var app = Express();    
+var app = Express();
+const PORT = process.env.PORT;   
 
 app.use(cors())
 
@@ -12,5 +13,5 @@ app.get("/", (req,res)=>{
 
 
 
-app.listen(3004, ()=> { 
-    console.log("Up 3004")});
+app.listen(PORT, ()=> { 
+    console.log(`Up ${PORT}`)});

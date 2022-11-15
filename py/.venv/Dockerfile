@@ -6,8 +6,6 @@ COPY ./py/.venv/requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
 COPY ./py/.venv/. .
 
-EXPOSE 3004
-
 
 #CMD flask --app app.py run -> NO fucking andaba!
 #En la siguiente instruccion hay algo que funciona, que el RUN anterior no lo tenia

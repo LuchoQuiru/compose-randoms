@@ -1,29 +1,53 @@
 version: '3'
 services:
 
-  ex:
+  ex-1:
     image: ex
     build: 
       context: ./ex
       dockerfile: Dockerfile
-    container_name: ex
+    container_name: ex-1
     ports:
-      - "3004:3004"
+      - "3005:3004"
     environment:
       - PORT=3004
     restart: "no"
-    
-  ph:
+
+  ex-2:
+    image: ex
+    build: 
+      context: ./ex
+      dockerfile: Dockerfile
+    container_name: ex-2
+    ports:
+      - "3006:3004"
+    environment:
+      - PORT=3004
+    restart: "no"    
+
+  ph-1:
     image: ph
     build: 
       context: ./ph
       dockerfile: Dockerfile
-    container_name: ph
+    container_name: ph-1
     ports:
       - "80:80"
     environment:
       - PORT=80
     restart: "no"
+
+  ph-2:
+    image: ph
+    build: 
+      context: ./ph
+      dockerfile: Dockerfile
+    container_name: ph-2
+    ports:
+      - "81:80"
+    environment:
+      - PORT=80
+    restart: "no"    
   
   py:
     image: py
@@ -37,6 +61,7 @@ services:
       - PORT=5000
     restart: "no"
 
+
   randoms:
     image: randoms
     build: 
@@ -48,9 +73,11 @@ services:
     environment:
       - REACT_APP_PORT=3000
       - REACT_APP_EX_HOST=http://localhost
-      - REACT_APP_EX_PORT=3004
+      - REACT_APP_EX1_PORT=3005
+      - REACT_APP_EX2_PORT=3006
       - REACT_APP_PH_HOST=http://localhost
-      - REACT_APP_PH_PORT=80
+      - REACT_APP_PH1_PORT=80
+      - REACT_APP_PH2_PORT=81      
       - REACT_APP_PY_HOST=http://localhost
       - REACT_APP_PY_PORT=5000
     restart: "no"
